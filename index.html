@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineer Booklet</title>
+<meta name="theme-color" content="#B5651D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F4F1EA'/%3E%3Cpath d='M16 9.4C14 7.9 11.5 7.1 8.6 7.1H5.2v17.4h3.6c2.7 0 5 .8 7.2 2.3 2.1-1.5 4.5-2.3 7.2-2.3h3.6V7.1h-3.4c-1.4 0-2.7.2-3.9.5' fill='none' stroke='%231A1A1A' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M23 7.1v5.2h5.2z' fill='%23B5651D'/%3E%3Cpath d='M16 9.4v17.4' fill='none' stroke='%231A1A1A' stroke-width='1.8'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F1EA;
+    --ink: #1A1A1A;
+    --ink-2: #4A4A45;
+    --accent: #B5651D;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #16150F;
+      --ink: #EFEBE2;
+      --ink-2: #C3BDB2;
+      --accent: #E08B3E;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    background: var(--paper);
+  }
+  body {
+    display: grid;
+    place-items: center;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 2.4vw, 20px);
+  }
+  .brand-mark {
+    width: clamp(56px, 9vw, 96px);
+    height: clamp(56px, 9vw, 96px);
+    flex: none;
+  }
+  .bm-page, .bm-spine { fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linejoin: round; }
+  .bm-fold { fill: var(--accent); stroke: none; }
+  .brand-word {
+    display: grid;
+    line-height: 1;
+    font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+    letter-spacing: .10em;
+  }
+  .brand-word b {
+    font-size: clamp(22px, 3.6vw, 34px);
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .brand-word span {
+    margin-top: .35em;
+    font-size: clamp(22px, 3.6vw, 34px);
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+</style>
+</head>
+<body>
+
+<div class="brand" aria-label="Engineer Booklet">
+  <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+    <path class="bm-page" d="M16 8.6C13.9 7 11.3 6.2 8.2 6.2H4.5v18.2h4c2.9 0 5.4.8 7.5 2.4 2.1-1.6 4.6-2.4 7.5-2.4h4V6.2h-3.7c-1.5 0-2.9.2-4.2.6"/>
+    <path class="bm-fold" d="M23.3 6.2v5.2h5.2z"/>
+    <path class="bm-spine" d="M16 8.6v18.2"/>
+  </svg>
+  <span class="brand-word"><b>ENGINEER</b><span>BOOKLET</span></span>
+</div>
+
+</body>
+</html>
