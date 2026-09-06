@@ -1,0 +1,4 @@
+# Serve the branded 404 page for any path that doesn't exist on the server.
+# The in-app hash routes (index.html#/section/page) don't hit this at all —
+# this is only for real broken/missing URLs (typos, stale external links).
+ErrorDocument 404 /404.html

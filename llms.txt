@@ -1,0 +1,12 @@
+# Engineer Booklet
+
+> A reference manual for working engineers, built as a video channel. One engineering concept per page, at the depth the job actually needs — six sections, the same five steps every time, nothing for sale.
+
+## Pages
+
+- [What This Channel Actually Is](https://engineer-booklet.com/#/start-here/00): Engineer Booklet is a reference manual built as a video channel. Six sections, one concept per page, the same five steps every time.
+
+## More
+
+- [Privacy & Cookies](https://engineer-booklet.com/privacy.html)
+- [YouTube channel](https://www.youtube.com/@engineerbooklet)
