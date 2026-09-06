@@ -848,6 +848,16 @@
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch (e) {}
     if (saved === 'granted' || saved === 'denied') { apply(saved); return; }
+    /* Global Privacy Control — a browser/extension-sent opt-out signal
+       (globalprivacycontrol.org). Treat it as the visitor having already
+       answered "reject": apply it, remember it, skip the banner. Referenced
+       directly in privacy.html's "Do Not Track & GPC" section — keep that
+       claim true if this logic ever changes. */
+    if (navigator.globalPrivacyControl === true) {
+      try { localStorage.setItem(KEY, 'denied'); } catch (e) {}
+      apply('denied');
+      return;
+    }
     bar.hidden = false;
     $('#consent-accept').addEventListener('click', function () { choose('granted'); });
     $('#consent-reject').addEventListener('click', function () { choose('denied'); });
