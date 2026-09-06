@@ -1,0 +1,5 @@
+# ads.txt — Authorized Digital Sellers
+# https://iabtechlab.com/ads-txt/
+# This file must be reachable at the exact site root: https://<domain>/ads.txt
+
+google.com, pub-2497978850240200, DIRECT, f08c47fec0942fa0

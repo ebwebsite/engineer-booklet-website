@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found — Engineer Booklet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/booklet.css">
+<style>
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  .err-wrap { flex: 1 0 auto; display: flex; align-items: center; justify-content: center; }
+  .err-wrap .brand { position: fixed; top: var(--s5); left: var(--s5); }
+  .mini-foot { text-align: center; padding: var(--s5); color: var(--muted); font-size: 13px; }
+  .mini-foot a { color: var(--muted); }
+  .mini-foot a:hover { color: var(--accent-ink); }
+</style>
+</head>
+<body>
+
+<a class="brand" href="index.html" aria-label="Engineer Booklet — home">
+  <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px">
+    <path d="M16 8.6C13.9 7 11.3 6.2 8.2 6.2H4.5v18.2h4c2.9 0 5.4.8 7.5 2.4 2.1-1.6 4.6-2.4 7.5-2.4h4V6.2h-3.7c-1.5 0-2.9.2-4.2.6" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M23.3 6.2v5.2h5.2z" fill="#B5651D"/>
+    <path d="M16 8.6v18.2" fill="none" stroke="#1A1A1A" stroke-width="1.8"/>
+  </svg>
+</a>
+
+<div class="err-wrap">
+  <div class="err-page">
+    <img class="err-mascot" src="assets/img/mascot-404.png" alt="The Engineer Booklet mascot, scratching his head and looking a little lost">
+    <span class="err-kicker">404</span>
+    <h1>Page Not Found</h1>
+    <p>Sorry — this page isn't available. Even a good engineer gets lost sometimes.</p>
+    <div class="err-actions">
+      <a class="err-btn is-primary" href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12H4.5M11 5.5L4.5 12l6.5 6.5"/></svg>
+        Back to Engineer Booklet
+      </a>
+      <a class="err-btn is-ghost" href="https://www.youtube.com/@engineerbooklet" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21.6 7.4a2.5 2.5 0 0 0-1.8-1.8C18.2 5.2 12 5.2 12 5.2s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.4C2 9 2 12 2 12s0 3 .4 4.6a2.5 2.5 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15 22 12 22 12s0-3-.4-4.6z"/><path d="M10.2 15.1l5-3.1-5-3.1z"/></svg>
+        Watch on YouTube
+      </a>
+      <a class="err-btn is-ghost" href="mailto:info@engineer-booklet.com">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 6.5h17v11h-17z"/><path d="M4 7l8 6 8-6"/></svg>
+        Send feedback
+      </a>
+    </div>
+  </div>
+</div>
+
+<p class="mini-foot">© <span id="foot-year"></span> Engineer Booklet · <a href="privacy.html">Privacy &amp; cookies</a></p>
+
+<script>document.getElementById('foot-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
