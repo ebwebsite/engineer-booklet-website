@@ -5,6 +5,7 @@
 ## Pages
 
 - [What This Channel Actually Is](https://engineer-booklet.com/#/start-here/00): Engineer Booklet is a reference manual built as a video channel. Six sections, one concept per page, the same five steps every time.
+- [Powder Bed Fusion (Metal 3D Printing) Explained](https://engineer-booklet.com/#/manufacturing/01): A laser melts metal powder layer by layer into a fully dense part. Here is the mechanism, the two ways the melting goes wrong, and why a part that looks perfect can crack weeks later.
 
 ## More
 
