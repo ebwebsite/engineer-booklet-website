@@ -72,10 +72,11 @@ window.BOOKLET = {
         'How parts are actually made. Metal 3D printing, CNC, injection molding, casting — the tolerances you can really hold and the defects that show up in production.',
       /* One teaser only — we don't publish the roadmap or its size. This
          must match the title of whichever page is actually next, not just
-         any topic in the bank — page 01 is fully drafted and next in line,
-         so it's this, not CNC (which hasn't been started). Swap it for the
-         following page's title once 01 actually publishes. */
-      upcoming: ['Powder Bed Fusion (Metal 3D Printing) Explained'],
+         any topic in the bank. Page 01 published 2026-09-11; the next
+         manufacturing page is CNC tolerances, which Video 02's end card
+         already announces ("Next week's page... CNC machining tolerances"),
+         so the site and the video promise the same thing. */
+      upcoming: ["CNC Machining Tolerances: What's Actually Achievable"],
     },
     {
       id: 'reliability',

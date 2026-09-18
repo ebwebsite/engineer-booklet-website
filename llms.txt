@@ -6,6 +6,7 @@
 
 - [What This Channel Actually Is](https://engineer-booklet.com/#/start-here/00): Engineer Booklet is a reference manual built as a video channel. Six sections, one concept per page, the same five steps every time.
 - [Powder Bed Fusion (Metal 3D Printing) Explained](https://engineer-booklet.com/#/manufacturing/01): A laser melts metal powder layer by layer into a fully dense part. Here is the mechanism, the two ways the melting goes wrong, and why a part that looks perfect can crack weeks later.
+- [FMEA Explained: The Method Most Engineers Fill In Wrong](https://engineer-booklet.com/#/reliability/02): FMEA finds how a design can fail before it does. Here is the one line the whole method repeats, why its famous risk number buries the failures that matter most, and the three habits that make most FMEAs catch nothing.
 
 ## More
 
