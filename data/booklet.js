@@ -72,11 +72,11 @@ window.BOOKLET = {
         'How parts are actually made. Metal 3D printing, CNC, injection molding, casting — the tolerances you can really hold and the defects that show up in production.',
       /* One teaser only — we don't publish the roadmap or its size. This
          must match the title of whichever page is actually next, not just
-         any topic in the bank. Page 01 published 2026-09-11; the next
-         manufacturing page is CNC tolerances, which Video 02's end card
-         already announces ("Next week's page... CNC machining tolerances"),
-         so the site and the video promise the same thing. */
-      upcoming: ["CNC Machining Tolerances: What's Actually Achievable"],
+         any topic in the bank. Page 03 (CNC tolerances) published 2026-09-25,
+         so this moved on to A3, the next manufacturing topic in the plan.
+         Video 03's own end card promises DFM, which is the PRODUCT DEV
+         section's next page — each section teases its own. */
+      upcoming: ['Investment Casting vs Sand Casting: When to Use Which'],
     },
     {
       id: 'reliability',
@@ -86,7 +86,7 @@ window.BOOKLET = {
       icon: 'i-crack',
       blurb:
         'Why things break and how to catch it on paper first. FMEA, root cause, fatigue, Weibull, SPC, inspection.',
-      upcoming: ['FMEA Explained: The Method Most Engineers Fill In Wrong'],
+      upcoming: ["Root Cause Analysis: The 5 Whys Isn't Enough"],
     },
     {
       id: 'product-development',
