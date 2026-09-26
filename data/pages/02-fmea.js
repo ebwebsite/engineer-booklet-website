@@ -13,6 +13,7 @@ BOOKLET.addPage({
   status: 'published',
   youtubeId: 'CVyP-oAzOcw',
   bookletPageImage: 'assets/img/booklet-page-02.png',
+  thumbnail: 'assets/img/thumb-02.jpg',
   keywords: [
     'fmea', 'failure mode and effects analysis', 'dfmea', 'pfmea', 'design fmea',
     'process fmea', 'rpn', 'risk priority number', 'severity', 'occurrence', 'detection',

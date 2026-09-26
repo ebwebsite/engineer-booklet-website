@@ -13,6 +13,7 @@ BOOKLET.addPage({
   status: 'published',
   youtubeId: 'ioIbXXw9Pio',
   bookletPageImage: 'assets/img/booklet-page-01.png',
+  thumbnail: 'assets/img/thumb-01.jpg',
   keywords: [
     'powder bed fusion', 'PBF', 'LPBF', 'SLM', 'DMLS', 'metal 3d printing',
     'additive manufacturing', 'porosity', 'lack of fusion', 'keyhole',

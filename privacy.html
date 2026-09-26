@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Engineer Booklet</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/booklet.css">
+<link rel="stylesheet" href="/assets/css/booklet.css">
 <style>
   .legal-wrap { max-width: 760px; margin: 0 auto; padding: var(--s7) var(--s5) var(--s8); }
   .legal-wrap .brand { margin-bottom: var(--s7); }
@@ -49,7 +49,7 @@
 </head>
 <body>
 <div class="legal-wrap">
-  <a class="brand" href="index.html" aria-label="Engineer Booklet — home">
+  <a class="brand" href="/" aria-label="Engineer Booklet — home">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
       <path class="bm-page" d="M16 8.6C13.9 7 11.3 6.2 8.2 6.2H4.5v18.2h4c2.9 0 5.4.8 7.5 2.4 2.1-1.6 4.6-2.4 7.5-2.4h4V6.2h-3.7c-1.5 0-2.9.2-4.2.6"/>
       <path class="bm-fold" d="M23.3 6.2v5.2h5.2z"/>
@@ -59,13 +59,13 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 6 September 2026</p>
+  <p class="updated">Last updated: 26 September 2026</p>
 
   <div class="summary-box">
     <h2>In short</h2>
     <ul>
       <li>Engineer Booklet is a static site with no accounts, no forms, and no server-side database — there is very little of yours to collect in the first place.</li>
-      <li>We store your theme and cookie-consent choice in your browser only. Nothing you do here is sent to us directly.</li>
+      <li>We store your light/dark theme choice in your browser only. Nothing you do here is sent to us directly.</li>
       <li>Playing an embedded video, or (once running) seeing an ad, lets Google set its own cookies under its own privacy policy — never without your consent if you're in the EEA, UK, or Switzerland.</li>
       <li>You have the rights GDPR and UK GDPR give you — access, correction, deletion, objection, and more — for whatever data does exist. See <a href="#your-rights">Your rights</a>.</li>
       <li>Questions, removal requests, or any other enquiry all go to one place: <a href="mailto:info@engineer-booklet.com">info@engineer-booklet.com</a>.</li>
@@ -103,7 +103,7 @@
     <h2 id="what-we-collect">What data we collect</h2>
     <p>The site itself has no accounts, no forms, and no server-side database — it's a static site, and it doesn't ask you for anything. Two things happen in the background regardless:</p>
     <ul>
-      <li><strong>Browser storage we set.</strong> Your light/dark theme choice and your cookie-consent decision are saved in your browser's local storage. Neither is transmitted to us; we have no record of either.</li>
+      <li><strong>Browser storage we set.</strong> Your light/dark theme choice is saved in your browser's local storage. It isn't transmitted to us; we have no record of it. (Your cookie-consent choice, where one is asked for, is stored by Google's consent message — see <a href="#cookies">Cookies</a>.)</li>
       <li><strong>Server access logs.</strong> Our hosting provider, <a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener">Hostinger</a>, automatically records standard technical data for every request — IP address, page requested, timestamp, user agent, and referrer — the way virtually every web host does, for security, abuse prevention, and keeping the site running.</li>
     </ul>
     <p>Beyond that, the only other data processing happens through third parties you interact with directly — playing a YouTube embed, or (once live) seeing an ad — each covered in its own section below.</p>
@@ -114,21 +114,22 @@
       <caption>Processing purposes and their legal basis</caption>
       <thead><tr><th>Purpose</th><th>Data involved</th><th>Legal basis</th></tr></thead>
       <tbody>
-        <tr><td>Remembering your theme and cookie choice</td><td>Local storage, browser-only</td><td>Strictly necessary for the feature you asked for — no consent required (ePrivacy Art. 5(3) exemption; GDPR Art. 6(1)(b)/(f))</td></tr>
+        <tr><td>Remembering your theme choice</td><td>Local storage, browser-only</td><td>Strictly necessary for the feature you asked for — no consent required (ePrivacy Art. 5(3) exemption; GDPR Art. 6(1)(b)/(f))</td></tr>
+        <tr><td>Remembering your cookie-consent choice</td><td>A cookie set by Google's consent message</td><td>Strictly necessary to respect and record your choice — no consent required (ePrivacy Art. 5(3) exemption; GDPR Art. 6(1)(c), Art. 7(1))</td></tr>
         <tr><td>Keeping the site secure and running</td><td>Server access logs</td><td>Legitimate interests (GDPR Art. 6(1)(f)) — securing infrastructure against abuse</td></tr>
         <tr><td>Showing personalized/measured ads</td><td>Advertising cookies, set by Google</td><td>Your consent (GDPR Art. 6(1)(a); ePrivacy Art. 5(3) / PECR reg. 6) — asked for before any such cookie is set</td></tr>
-        <tr><td>Playing an embedded video</td><td>YouTube cookies, set by Google once you press play</td><td>Your consent, given by the act of pressing play on third-party content after the consent banner has been resolved</td></tr>
+        <tr><td>Playing an embedded video</td><td>YouTube cookies, set by Google once you press play</td><td>Your consent, given by the act of pressing play on third-party content after the consent message, where shown, has been answered</td></tr>
       </tbody>
     </table>
 
     <h2 id="cookies">Cookies &amp; similar technologies</h2>
-    <p>A cookie-consent banner appears on your first visit if you're in the EEA, UK, or Switzerland, before any non-essential cookie is set. Your choice is remembered in local storage, and you can withdraw it at any time — see <a href="#exercise-rights">Exercising your rights</a>.</p>
+    <p>If you're in the EEA, UK, or Switzerland, a consent message from Google (a Google-certified consent management platform, run through AdSense) appears on your first visit, before any advertising cookie is set. Your choice is stored in a cookie set by that message, and you can change or withdraw it at any time with the <strong>Cookie settings</strong> link at the bottom of every page — see <a href="#exercise-rights">Exercising your rights</a>.</p>
     <table>
       <caption>What's actually set, and by whom</caption>
       <thead><tr><th>Name / storage key</th><th>Set by</th><th>Purpose</th><th>Category</th></tr></thead>
       <tbody>
         <tr><td><code>eb-theme</code></td><td>Us (local storage)</td><td>Remembers light/dark mode</td><td>Strictly necessary</td></tr>
-        <tr><td><code>eb-consent</code></td><td>Us (local storage)</td><td>Remembers your cookie-consent choice</td><td>Strictly necessary</td></tr>
+        <tr><td>Consent cookies (e.g. <code>FCCDCF</code>, <code>FCNEC</code>)</td><td>Google's consent message</td><td>Remembers your cookie-consent choice</td><td>Strictly necessary</td></tr>
         <tr><td>Advertising cookies (e.g. via <code>doubleclick.net</code>)</td><td>Google AdSense</td><td>Ad personalization &amp; measurement</td><td>Advertising — requires consent</td></tr>
         <tr><td>YouTube cookies (e.g. <code>YSC</code>, <code>VISITOR_INFO1_LIVE</code>, <code>PREF</code>)</td><td>YouTube / Google</td><td>Video playback &amp; preferences</td><td>Functional — set once you play an embed</td></tr>
       </tbody>
@@ -139,8 +140,8 @@
     <p>Video pages embed YouTube via <code>youtube-nocookie.com</code>, which limits cookies until you actually press play. Once you play a video, YouTube (Google) may set cookies and collect data under its own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>. We don't receive or see any of that data ourselves.</p>
 
     <h2 id="adsense">Advertising (Google AdSense)</h2>
-    <p>This site uses, or intends to use, Google AdSense to show ads. Google and its advertising partners use cookies to serve ads based on your prior visits to this and other sites. You can review or opt out of personalized advertising at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>, and read more at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites that use its services</a>.</p>
-    <p>Visitors in the EEA, UK, and Switzerland see the consent banner before any ad-related cookie is set, and can withdraw consent at any time.</p>
+    <p>This site uses Google AdSense to show ads. Google and its advertising partners use cookies to serve ads based on your prior visits to this and other sites. You can review or opt out of personalized advertising at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>, and read more at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites that use its services</a>.</p>
+    <p>Visitors in the EEA, UK, and Switzerland see Google's consent message before any ad-related cookie is set, and can change or withdraw their choice at any time with the <strong>Cookie settings</strong> link at the bottom of every page. If you decline, Google shows non-personalized or limited ads instead.</p>
 
     <h2 id="recipients">Who we share data with</h2>
     <p>We don't sell personal data, and we don't have any of our own to share beyond what a third party collects directly through your own interaction with their embed. The processors and recipients involved are:</p>
@@ -153,7 +154,7 @@
     <p>Google LLC is based in the United States. Where Google processes data described in this policy outside the EEA/UK/Switzerland, it does so under recognized safeguards — Google is a certified participant in the <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener">EU-U.S. Data Privacy Framework</a> and its UK and Swiss extensions, which the European Commission, the UK, and Switzerland recognize as providing an adequate level of protection. See Google's own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a> for their current certification and safeguards.</p>
 
     <h2 id="retention">How long we keep data</h2>
-    <p>We don't retain personal data ourselves — there's no database on our end to retain it in. Your theme and consent preferences stay in your browser's local storage until you clear your browser data or reset them yourself. Server access logs are retained by Hostinger under its own retention schedule; see <a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener">Hostinger's privacy policy</a> for specifics. Data held by Google (YouTube/AdSense) is retained under Google's own policies, which you can review or manage at <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google's Data &amp; Privacy controls</a>.</p>
+    <p>We don't retain personal data ourselves — there's no database on our end to retain it in. Your theme preference stays in your browser's local storage until you clear your browser data. Your consent choice stays in the consent cookie until it expires or you clear it. Server access logs are retained by Hostinger under its own retention schedule; see <a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener">Hostinger's privacy policy</a> for specifics. Data held by Google (YouTube/AdSense) is retained under Google's own policies, which you can review or manage at <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google's Data &amp; Privacy controls</a>.</p>
 
     <h2 id="your-rights">Your rights</h2>
     <p>If GDPR, UK GDPR, or the Swiss FADP applies to you, you have the following rights over your personal data. Because we hold so little of it ourselves, most requests will point you to the relevant third party (Google) — but we'll always help you figure out where to go.</p>
@@ -169,7 +170,7 @@
     </ul>
 
     <h2 id="exercise-rights">Exercising your rights</h2>
-    <p>Every request — removal, access, correction, objection, or anything else above — goes to the same place: email <a href="mailto:info@engineer-booklet.com">info@engineer-booklet.com</a> and describe what you'd like. We'll respond within one month, as GDPR Article 12 requires (extendable by two further months for complex requests, in which case we'll tell you why). To withdraw cookie consent specifically, clear this site's local storage (or your browser's site data for engineer-booklet.com) and reload the page; the consent banner will ask again. To control what Google does with data it holds, use <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google's own privacy controls</a> directly, since we can't act on Google's data on your behalf.</p>
+    <p>Every request — removal, access, correction, objection, or anything else above — goes to the same place: email <a href="mailto:info@engineer-booklet.com">info@engineer-booklet.com</a> and describe what you'd like. We'll respond within one month, as GDPR Article 12 requires (extendable by two further months for complex requests, in which case we'll tell you why). To change or withdraw cookie consent specifically, use the <strong>Cookie settings</strong> link at the bottom of any page on the site, which reopens the consent message, or clear your browser's site data for engineer-booklet.com. To control what Google does with data it holds, use <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google's own privacy controls</a> directly, since we can't act on Google's data on your behalf.</p>
 
     <h2 id="complaints">Complaints</h2>
     <p>We'd rather you raised a concern with us directly first, at <a href="mailto:info@engineer-booklet.com">info@engineer-booklet.com</a>, so we can try to put it right. You're also entitled to lodge a complaint with a supervisory authority:</p>
@@ -183,7 +184,7 @@
     <p>This site is not directed at children, and we do not knowingly collect personal data from children under 16 — or the age of digital consent set by your own country's law, which under GDPR Article 8 may be as low as 13. If you believe a child has provided us data, contact us and we'll delete it.</p>
 
     <h2 id="dnt">Do Not Track &amp; Global Privacy Control</h2>
-    <p>Browser "Do Not Track" signals were never standardized around a common meaning, so this site doesn't respond to them. We do honor the <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener">Global Privacy Control (GPC)</a> signal where your browser sends one: if detected, we treat it as an automatic opt-out of advertising cookies, equivalent to declining the consent banner, without showing the banner itself.</p>
+    <p>Browser "Do Not Track" signals were never standardized around a common meaning, so this site doesn't respond to them. We do honor the <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener">Global Privacy Control (GPC)</a> signal where your browser sends one: if detected, we ask Google to show you non-personalized ads only, meaning ads that are not based on your past browsing. Google may still use cookies for things like frequency capping, aggregated reporting and fraud prevention. In the EEA, UK and Switzerland, the consent message still asks for your choice, because the law there requires it.</p>
 
     <h2 id="changes">Changes to this policy</h2>
     <p>If what this site collects or how it uses ads changes materially, we'll update this page and change the "last updated" date above. We won't reduce your rights under this policy retroactively without your consent.</p>
@@ -195,7 +196,7 @@
     </div>
   </div>
 
-  <a class="back-home" href="index.html">
+  <a class="back-home" href="/">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12H4.5M11 5.5L4.5 12l6.5 6.5"/></svg>
     Back to Engineer Booklet
   </a>

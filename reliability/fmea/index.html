@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FMEA Explained: The Method Most Engineers Fill In Wrong — Engineer Booklet</title>
+<meta name="description" content="FMEA finds how a design can fail before it does. Here is the one line the whole method repeats, why its famous risk number buries the failures that matter most, and the three habits that make most FMEAs catch nothing.">
+<link rel="canonical" href="https://engineer-booklet.com/reliability/fmea/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Engineer Booklet">
+<meta property="og:title" content="FMEA Explained: The Method Most Engineers Fill In Wrong">
+<meta property="og:description" content="FMEA finds how a design can fail before it does. Here is the one line the whole method repeats, why its famous risk number buries the failures that matter most, and the three habits that make most FMEAs catch nothing.">
+<meta property="og:image" content="https://engineer-booklet.com/assets/img/thumb-02.jpg">
+<meta property="og:url" content="https://engineer-booklet.com/reliability/fmea/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"FMEA Explained: The Method Most Engineers Fill In Wrong","description":"FMEA finds how a design can fail before it does. Here is the one line the whole method repeats, why its famous risk number buries the failures that matter most, and the three habits that make most FMEAs catch nothing.","uploadDate":"2026-09-18","embedUrl":"https://www.youtube.com/embed/CVyP-oAzOcw","url":"https://engineer-booklet.com/reliability/fmea/","thumbnailUrl":["https://engineer-booklet.com/assets/img/thumb-02.jpg"],"duration":"PT9M46S"}</script>
+<meta name="theme-color" content="#B5651D">
+
+<!-- Theme before first paint. Every link is a full page load, so applying the
+     saved theme later (in app.js) would flash the light theme on each click. -->
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('eb-theme'); } catch (e) {}
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+
+<!-- ── AdSense ─────────────────────────────────────────────────────────────
+     The account meta tag + the loader are all Google needs to review the
+     site; once approved, Auto ads (set in AdSense, no code here) place the
+     ads. Consent for EEA/UK/Swiss visitors is Google's own certified message
+     (AdSense → Privacy & messaging), which this same loader brings in.
+     A browser sending Global Privacy Control gets non-personalised ads only —
+     privacy.html promises that, so keep the two in step. See README → AdSense. -->
+<meta name="google-adsense-account" content="ca-pub-2497978850240200">
+<script>
+  if (navigator.globalPrivacyControl === true) {
+    (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  }
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2497978850240200" crossorigin="anonymous"></script>
+
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/booklet.css">
+</head>
+<body data-view="page">
+
+<a class="skip-link" href="#page">Skip to the page</a>
+
+<!-- ── Icon sprite. Line-art at 24×24, stroke 1.75, matching the channel's
+     technical drawing language. Add new section icons here. ───────────── -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="i-new"><path d="M6 3h12v18l-6-4.2L6 21z"/></g>
+    <g id="i-book"><path d="M12 6.5C10.4 5.2 8.4 4.5 6 4.5H3v13h3c2.4 0 4.4.7 6 2 1.6-1.3 3.6-2 6-2h3v-13h-3c-2.4 0-4.4.7-6 2z"/><path d="M12 6.5v13"/></g>
+    <g id="i-bracket"><path d="M4.5 3.5h5.5v11h10v5.5h-15.5z"/><circle cx="7.2" cy="6.4" r="1.15"/><circle cx="17" cy="17.4" r="1.15"/></g>
+    <g id="i-crack"><path d="M4 5.5h16v13H4z"/><path d="M9.5 5.5l2.2 4.6-3 1.9 3.4 2-1.4 4.5"/></g>
+    <g id="i-sheet"><path d="M4 3.5h11l5 5v12H4z"/><path d="M15 3.5v5h5"/><path d="M7 15.5h9M7 15.5l1.8-1.6M7 15.5l1.8 1.6M16 15.5l-1.8-1.6M16 15.5l-1.8 1.6"/></g>
+    <g id="i-sensor"><circle cx="8" cy="12" r="2.4"/><path d="M12.6 8.2a5.4 5.4 0 0 1 0 7.6M16.2 5.2a10 10 0 0 1 0 13.6"/></g>
+    <g id="i-caliper"><path d="M3 9.5h18v3.4H3z"/><path d="M6.4 12.9v6.6M17.6 12.9v4.2M6.4 9.5V5.2M17.6 9.5V6.8"/></g>
+    <g id="i-monitor"><path d="M3 4.5h18v12H3z"/><path d="M9 20.5h6M12 16.5v4"/></g>
+    <g id="i-search"><circle cx="10.8" cy="10.8" r="6.3"/><path d="M15.4 15.4L20.5 20.5"/></g>
+    <g id="i-menu"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></g>
+    <g id="i-close"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></g>
+    <g id="i-sun"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M21.5 12h-2.4M4.9 12H2.5M18.7 5.3l-1.7 1.7M7 17l-1.7 1.7M18.7 18.7L17 17M7 7L5.3 5.3"/></g>
+    <g id="i-moon"><path d="M20 14.4A8.6 8.6 0 0 1 9.6 4 8.6 8.6 0 1 0 20 14.4z"/></g>
+    <g id="i-chevron"><path d="M9 5.5l6.5 6.5L9 18.5"/></g>
+    <g id="i-play"><path d="M8 5.2l11 6.8-11 6.8z"/></g>
+    <g id="i-youtube"><path d="M21.6 7.4a2.5 2.5 0 0 0-1.8-1.8C18.2 5.2 12 5.2 12 5.2s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.4C2 9 2 12 2 12s0 3 .4 4.6a2.5 2.5 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8C22 15 22 12 22 12s0-3-.4-4.6z"/><path d="M10.2 15.1l5-3.1-5-3.1z"/></g>
+    <g id="i-clock"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2V12l3.2 2"/></g>
+    <g id="i-arrow-left"><path d="M20 12H4.5M11 5.5L4.5 12l6.5 6.5"/></g>
+    <g id="i-arrow-right"><path d="M4 12h15.5M13 5.5l6.5 6.5-6.5 6.5"/></g>
+    <g id="i-external"><path d="M14 4.5h5.5V10"/><path d="M19.5 4.5L11 13"/><path d="M18 14.5v4a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 18.5V7.5A1.5 1.5 0 0 1 5.5 6h4"/></g>
+    <g id="i-hash"><path d="M6.5 3.5L5 20.5M14.5 3.5L13 20.5M3.5 9h16M3 15h16"/></g>
+    <g id="i-download"><path d="M12 3.5v11"/><path d="M8 11l4 4 4-4"/><path d="M4.5 17.5v2A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5v-2"/></g>
+    <g id="i-mail"><path d="M3.5 6.5h17v11h-17z"/><path d="M4 7l8 6 8-6"/></g>
+    <g id="i-home"><path d="M3.5 11.2L12 4l8.5 7.2"/><path d="M5.8 9.4v10.1h12.4V9.4"/><path d="M10 19.5v-5.2h4v5.2"/></g>
+    <g id="i-playlist"><path d="M3.5 6.5h13M3.5 11.5h13M3.5 16.5h7.5"/><path d="M15 14.2l5.5 3.3-5.5 3.3z"/></g>
+  </defs>
+</svg>
+
+<!-- ── Top bar ────────────────────────────────────────────────────────── -->
+<header class="topbar">
+  <button class="icon-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open the section list">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"></use></svg>
+  </button>
+
+  <a class="brand" href="/" aria-label="Engineer Booklet — home">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <path class="bm-page" d="M16 8.6C13.9 7 11.3 6.2 8.2 6.2H4.5v18.2h4c2.9 0 5.4.8 7.5 2.4 2.1-1.6 4.6-2.4 7.5-2.4h4V6.2h-3.7c-1.5 0-2.9.2-4.2.6"/>
+      <path class="bm-fold" d="M23.3 6.2v5.2h5.2z"/>
+      <path class="bm-spine" d="M16 8.6v18.2"/>
+    </svg>
+    <span class="brand-word"><b>ENGINEER</b><span>BOOKLET</span></span>
+  </a>
+
+  <div class="search" role="search">
+    <svg class="icon search-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"></use></svg>
+    <input id="search-input" type="search" autocomplete="off" spellcheck="false"
+           placeholder="Search the booklet"
+           aria-label="Search the booklet"
+           role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-kbd" aria-hidden="true">/</kbd>
+    <ul id="search-results" class="search-results" role="listbox" aria-label="Search results" hidden></ul>
+  </div>
+
+  <div class="topbar-actions">
+    <button class="icon-btn" id="theme-toggle" aria-label="Switch to dark mode" title="Switch theme">
+      <svg class="icon icon-light" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon"></use></svg>
+      <svg class="icon icon-dark" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"></use></svg>
+    </button>
+    <a class="yt-link" id="yt-link" href="#" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>
+      <span>Channel</span>
+    </a>
+    <a class="sub-cta is-compact in-topbar" id="sub-cta-topbar" href="#" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>
+      Subscribe
+    </a>
+  </div>
+</header>
+
+<!-- ── Three panes: tabs · page · on-this-page ─────────────────────────── -->
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Booklet sections">
+    <div class="sidebar-head">
+      <span class="eyebrow">Contents</span>
+      <button class="icon-btn nav-close" id="nav-close" aria-label="Close the section list">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+    <div id="tabs" class="tabs"><div class="tab" data-section="home" data-current="false"><a class="tab-head" href="/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"></use></svg><span class="tab-label">HOME</span></a></div><div class="tab" data-section="new" data-current="false"><a class="tab-head" href="/manufacturing/cnc-machining-tolerances/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-new"></use></svg><span class="tab-label">NEW</span><span class="tab-badge">LATEST</span></a></div><div class="tab" data-section="start-here" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"></use></svg><span class="tab-label">START HERE</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><a class="page-link" href="/start-here/what-this-channel-is/" data-page="00"><span class="pl-no">00</span><span>What This Channel Actually Is</span></a></div></div><div class="tab" data-section="manufacturing" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bracket"></use></svg><span class="tab-label">MANUFACTURING</span><span class="tab-letter">A</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><a class="page-link" href="/manufacturing/powder-bed-fusion/" data-page="01"><span class="pl-no">01</span><span>Powder Bed Fusion (Metal 3D Printing) Explained</span></a><a class="page-link" href="/manufacturing/cnc-machining-tolerances/" data-page="03"><span class="pl-no">03</span><span>CNC Machining Tolerances: What's Actually Achievable</span><span class="pl-tag is-new">New</span></a><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Investment Casting vs Sand Casting: When to Use Which</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="reliability" data-open="true" data-current="true"><button class="tab-head" type="button" aria-expanded="true"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crack"></use></svg><span class="tab-label">RELIABILITY</span><span class="tab-letter">B</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><a class="page-link" href="/reliability/fmea/" data-page="02" aria-current="page"><span class="pl-no">02</span><span>FMEA Explained: The Method Most Engineers Fill In Wrong</span></a><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Root Cause Analysis: The 5 Whys Isn't Enough</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="product-development" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"></use></svg><span class="tab-label">PRODUCT DEV</span><span class="tab-letter">C</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Design for Manufacturing (DFM): The Rule Every New Engineer Breaks</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="automation" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sensor"></use></svg><span class="tab-label">AUTOMATION</span><span class="tab-letter">D</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Industrial IoT Sensors 101: How Factories Actually Monitor Equipment</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="fundamentals" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-caliper"></use></svg><span class="tab-label">FUNDAMENTALS</span><span class="tab-letter">E</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Stress vs Strain: The Difference Your Textbook Skipped</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="tools" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-monitor"></use></svg><span class="tab-label">TOOLS</span><span class="tab-letter">F</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>CAD Parametric Modeling: What's Actually Happening Under the Hood</span><span class="pl-tag">Soon</span></div></div></div></div>
+    <div class="sidebar-foot">
+      <a class="sub-cta in-sidebar" id="sub-cta-sidebar" href="#" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>
+        Subscribe on YouTube
+      </a>
+      <p>New page every week.<br><span id="page-count">4 pages published</span></p>
+    </div>
+  </nav>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="page" id="page" tabindex="-1" data-route="/reliability/fmea/"><article class="page-body"><header class="page-head"><div class="page-kicker"><span class="pk-section">Reliability &amp; Failure · B1</span><span>Page 02</span></div><h1 class="page-title">FMEA Explained: The Method Most Engineers Fill In Wrong</h1><p class="page-summary">FMEA finds how a design can fail before it does. Here is the one line the whole method repeats, why its famous risk number buries the failures that matter most, and the three habits that make most FMEAs catch nothing.</p><div class="page-meta"><span class="meta-item"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"></use></svg>9:46</span><span class="meta-item">Sep 18, 2026</span><a class="meta-item meta-link" href="https://www.youtube.com/watch?v=CVyP-oAzOcw" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>Watch on YouTube <svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></header><div class="player-wrap"><div class="player" id="player"><iframe id="yt-frame" title="FMEA Explained: The Method Most Engineers Fill In Wrong" src="https://www.youtube-nocookie.com/embed/CVyP-oAzOcw?rel=0&amp;modestbranding=1&amp;enablejsapi=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div><section class="step-block" id="step-1" data-step="1"><div class="step-head"><span class="step-no">1</span><h2>Problem</h2></div><div class="prose"><p>Most engineers meet FMEA as a spreadsheet somebody emails them the week before a design review. You fill in the boxes, work out the score and send it back, and the design ships exactly the way it was always going to ship. The form catches nothing, and the method is not the reason. By the time the spreadsheet arrived, each decision it was meant to shape had already been made. A signed sheet that says the risk was reviewed is then worse than no sheet at all.</p></div></section><section class="step-block" id="step-2" data-step="2"><div class="step-head"><span class="step-no">2</span><h2>Quick Answer</h2></div><div class="callout is-quick"><h4>The short version</h4><p>FMEA, failure mode and effects analysis, is a structured way to find how something can fail before it fails, so the worst problems get fixed while they are still cheap, on paper, instead of expensive, in the field. You break a design or a process into what each part is supposed to do, and for every function you ask how it could fail. Each answer is a failure mode, and each one gets three questions: what it does to the person downstream, how often its cause is likely to happen, and whether you would catch it before it leaves. Those answers tell you which failures to chase first. It only works run early, while a change still costs a conversation instead of a recall, and run as a group, because the person who designed the part is usually the last one to see how it breaks.</p></div></section><section class="step-block" id="step-3" data-step="3"><div class="step-head"><span class="step-no">3</span><h2>Deep Dive</h2></div><div class="digest"><p class="digest-lead">The method itself is one line, repeated. The video spends its time on the number that ranks those lines, where that number misleads, and the habits that decide whether any of it matters. The map:</p><div class="digest-list"><button class="dg-item" type="button" data-seek="137"><span class="dg-t">2:17</span><span class="dg-body"><b>One line, five columns</b><span>Function, failure mode, effect, cause and control, built on a phone charging cable. Rate the effect on the user, never the failure itself.</span></span><svg class="icon dg-play" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></button><button class="dg-item" type="button" data-seek="236"><span class="dg-t">3:56</span><span class="dg-body"><b>Three numbers</b><span>Severity, occurrence and detection, each scored one to ten, and why detection trips people up: good catching earns a low score.</span></span><svg class="icon dg-play" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></button><button class="dg-item" type="button" data-seek="302"><span class="dg-t">5:02</span><span class="dg-body"><b>Where the number lies</b><span>Multiplying the three buries severity, so a rare, catchable failure that could kill someone ranks below a common, harmless annoyance.</span></span><svg class="icon dg-play" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></button><button class="dg-item" type="button" data-seek="323"><span class="dg-t">5:23</span><span class="dg-body"><b>Detection never reduces severity</b><span>A smoke alarm does not make the fire smaller. Only a design change lowers severity, which is why action priority reads severity first.</span></span><svg class="icon dg-play" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></button><button class="dg-item" type="button" data-seek="394"><span class="dg-t">6:34</span><span class="dg-body"><b>Three habits</b><span>Done too late, done alone, and filed and forgotten. Each one has a fix, and together they decide whether the sheet catches anything.</span></span><svg class="icon dg-play" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></button></div><button class="watch-cta" type="button" data-seek="0"><span class="wc-icon"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></span><span class="wc-text"><b>Watch the full 9:46 breakdown</b><span>The mechanism in full, with the animations, is in the video.</span></span><svg class="icon wc-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button></div></section><section class="step-block" id="step-5" data-step="5"><div class="step-head"><span class="step-no">4</span><h2>Booklet Page</h2></div><div class="booklet-card"><div class="bc-head"><span class="eyebrow">Booklet page — screenshot this</span><h3>FMEA Explained: The Method Most Engineers Fill In Wrong</h3></div><div class="bc-image"><a href="/assets/img/booklet-page-02.png" target="_blank" rel="noopener"><img src="/assets/img/booklet-page-02.png" alt="Booklet Page for FMEA Explained: The Method Most Engineers Fill In Wrong, the end-card from the video" loading="lazy"></a><a class="bc-download" href="/assets/img/booklet-page-02.png" download><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-download"></use></svg>Download this page (PNG)</a></div></div></section><nav class="page-nav" aria-label="Page navigation"><a href="/manufacturing/powder-bed-fusion/"><span class="pn-dir"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-left"></use></svg>Page 01</span><span class="pn-title">Powder Bed Fusion (Metal 3D Printing) Explained</span></a><a class="is-next" href="/manufacturing/cnc-machining-tolerances/"><span class="pn-dir">Page 03<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span><span class="pn-title">CNC Machining Tolerances: What's Actually Achievable</span></a></nav></article></main>
+
+  <aside class="rail" id="rail" aria-label="On this page"><h2>On this page</h2><ol><li class="rail-step" data-step="1"><span class="rail-num">1</span><a class="rail-link" href="#step-1">Problem</a></li><li class="rail-step" data-step="2"><span class="rail-num">2</span><a class="rail-link" href="#step-2">Quick Answer</a></li><li class="rail-step" data-step="3"><span class="rail-num">3</span><a class="rail-link" href="#step-3">Deep Dive</a></li><li class="rail-step" data-step="5"><span class="rail-num">4</span><a class="rail-link" href="#step-5">Booklet Page</a></li></ol><a class="sub-cta in-rail" href="https://www.youtube.com/@engineerbooklet?sub_confirmation=1" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>Subscribe on YouTube</a><div class="rail-aside"><a href="/start-here/what-this-channel-is/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"></use></svg>Page 00 · What This Channel Actually Is</a></div></aside>
+</div>
+
+<footer class="site-foot">
+  <span>© <span id="foot-year">2026</span> Engineer Booklet</span>
+  <nav aria-label="Site">
+    <a href="/start-here/what-this-channel-is/">About</a>
+    <a href="mailto:info@engineer-booklet.com">Contact</a>
+    <a href="/privacy.html">Privacy &amp; cookies</a>
+    <a href="/privacy.html#cookies" id="cookie-settings">Cookie settings</a>
+  </nav>
+</footer>
+
+
+<!-- ── Content ──────────────────────────────────────────────────────────
+     Taxonomy first, then one file per video page.
+     ADD A NEW VIDEO: drop the file in data/pages/ and add one line here. -->
+<script src="/data/booklet.js"></script>
+<script src="/data/pages/00-what-this-channel-is.js"></script>
+<script src="/data/pages/01-powder-bed-fusion.js"></script>
+<script src="/data/pages/02-fmea.js"></script>
+<script src="/data/pages/03-cnc-machining-tolerances.js"></script>
+
+<script src="/assets/js/render.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

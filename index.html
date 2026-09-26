@@ -5,42 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Engineer Booklet — a reference manual for working engineers</title>
 <meta name="description" content="One engineering concept per page. Manufacturing, reliability, product development, automation, fundamentals and tools, explained at the depth the job actually needs.">
-<meta name="theme-color" content="#B5651D">
-
-<!-- ── Consent Mode v2 default — must load before any Google tag, ad-related
-     or not, so ad_storage/ad_user_data/ad_personalization start denied until
-     the visitor actually accepts (assets/js/app.js's consent handler calls
-     gtag('consent','update', …) on accept). See README.md → "AdSense". ──── -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied'
-  });
-</script>
-
-<!-- AdSense loader — publisher account verification. Ad units on the page
-     are still plain placeholders (see README.md → "AdSense") until real
-     per-slot ad unit IDs exist; this script alone doesn't render any ads. -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2497978850240200" crossorigin="anonymous"></script>
-
-<!-- Social preview. -->
+<link rel="canonical" href="https://engineer-booklet.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Engineer Booklet">
 <meta property="og:title" content="Engineer Booklet">
 <meta property="og:description" content="A reference manual for working engineers. One concept per page.">
 <meta property="og:image" content="https://engineer-booklet.com/assets/img/og-cover.png">
 <meta property="og:url" content="https://engineer-booklet.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#B5651D">
 
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<!-- Theme before first paint. Every link is a full page load, so applying the
+     saved theme later (in app.js) would flash the light theme on each click. -->
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('eb-theme'); } catch (e) {}
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+
+<!-- ── AdSense ─────────────────────────────────────────────────────────────
+     The account meta tag + the loader are all Google needs to review the
+     site; once approved, Auto ads (set in AdSense, no code here) place the
+     ads. Consent for EEA/UK/Swiss visitors is Google's own certified message
+     (AdSense → Privacy & messaging), which this same loader brings in.
+     A browser sending Global Privacy Control gets non-personalised ads only —
+     privacy.html promises that, so keep the two in step. See README → AdSense. -->
+<meta name="google-adsense-account" content="ca-pub-2497978850240200">
+<script>
+  if (navigator.globalPrivacyControl === true) {
+    (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  }
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2497978850240200" crossorigin="anonymous"></script>
+
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/booklet.css">
+<link rel="stylesheet" href="/assets/css/booklet.css">
 </head>
-<body>
+<body data-view="home">
 
 <a class="skip-link" href="#page">Skip to the page</a>
 
@@ -71,6 +78,8 @@
     <g id="i-hash"><path d="M6.5 3.5L5 20.5M14.5 3.5L13 20.5M3.5 9h16M3 15h16"/></g>
     <g id="i-download"><path d="M12 3.5v11"/><path d="M8 11l4 4 4-4"/><path d="M4.5 17.5v2A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5v-2"/></g>
     <g id="i-mail"><path d="M3.5 6.5h17v11h-17z"/><path d="M4 7l8 6 8-6"/></g>
+    <g id="i-home"><path d="M3.5 11.2L12 4l8.5 7.2"/><path d="M5.8 9.4v10.1h12.4V9.4"/><path d="M10 19.5v-5.2h4v5.2"/></g>
+    <g id="i-playlist"><path d="M3.5 6.5h13M3.5 11.5h13M3.5 16.5h7.5"/><path d="M15 14.2l5.5 3.3-5.5 3.3z"/></g>
   </defs>
 </svg>
 
@@ -80,7 +89,7 @@
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"></use></svg>
   </button>
 
-  <a class="brand" href="#/new" aria-label="Engineer Booklet — home">
+  <a class="brand" href="/" aria-label="Engineer Booklet — home">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
       <path class="bm-page" d="M16 8.6C13.9 7 11.3 6.2 8.2 6.2H4.5v18.2h4c2.9 0 5.4.8 7.5 2.4 2.1-1.6 4.6-2.4 7.5-2.4h4V6.2h-3.7c-1.5 0-2.9.2-4.2.6"/>
       <path class="bm-fold" d="M23.3 6.2v5.2h5.2z"/>
@@ -124,52 +133,44 @@
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"></use></svg>
       </button>
     </div>
-    <div id="tabs" class="tabs"><!-- rendered by app.js --></div>
+    <div id="tabs" class="tabs"><div class="tab" data-section="home" data-current="true"><a class="tab-head" href="/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"></use></svg><span class="tab-label">HOME</span></a></div><div class="tab" data-section="new" data-current="false"><a class="tab-head" href="/manufacturing/cnc-machining-tolerances/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-new"></use></svg><span class="tab-label">NEW</span><span class="tab-badge">LATEST</span></a></div><div class="tab" data-section="start-here" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"></use></svg><span class="tab-label">START HERE</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><a class="page-link" href="/start-here/what-this-channel-is/" data-page="00"><span class="pl-no">00</span><span>What This Channel Actually Is</span></a></div></div><div class="tab" data-section="manufacturing" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bracket"></use></svg><span class="tab-label">MANUFACTURING</span><span class="tab-letter">A</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><a class="page-link" href="/manufacturing/powder-bed-fusion/" data-page="01"><span class="pl-no">01</span><span>Powder Bed Fusion (Metal 3D Printing) Explained</span></a><a class="page-link" href="/manufacturing/cnc-machining-tolerances/" data-page="03"><span class="pl-no">03</span><span>CNC Machining Tolerances: What's Actually Achievable</span><span class="pl-tag is-new">New</span></a><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Investment Casting vs Sand Casting: When to Use Which</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="reliability" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crack"></use></svg><span class="tab-label">RELIABILITY</span><span class="tab-letter">B</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><a class="page-link" href="/reliability/fmea/" data-page="02"><span class="pl-no">02</span><span>FMEA Explained: The Method Most Engineers Fill In Wrong</span></a><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Root Cause Analysis: The 5 Whys Isn't Enough</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="product-development" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"></use></svg><span class="tab-label">PRODUCT DEV</span><span class="tab-letter">C</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Design for Manufacturing (DFM): The Rule Every New Engineer Breaks</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="automation" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sensor"></use></svg><span class="tab-label">AUTOMATION</span><span class="tab-letter">D</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Industrial IoT Sensors 101: How Factories Actually Monitor Equipment</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="fundamentals" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-caliper"></use></svg><span class="tab-label">FUNDAMENTALS</span><span class="tab-letter">E</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>Stress vs Strain: The Difference Your Textbook Skipped</span><span class="pl-tag">Soon</span></div></div></div><div class="tab" data-section="tools" data-open="false" data-current="false"><button class="tab-head" type="button" aria-expanded="false"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-monitor"></use></svg><span class="tab-label">TOOLS</span><span class="tab-letter">F</span><svg class="icon tab-chev" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron"></use></svg></button><div class="tab-pages"><div class="page-link is-planned"><span class="pl-no pl-soon">·</span><span>CAD Parametric Modeling: What's Actually Happening Under the Hood</span><span class="pl-tag">Soon</span></div></div></div></div>
     <div class="sidebar-foot">
       <a class="sub-cta in-sidebar" id="sub-cta-sidebar" href="#" target="_blank" rel="noopener">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>
         Subscribe on YouTube
       </a>
-      <p>New page every week.<br><span id="page-count"></span></p>
+      <p>New page every week.<br><span id="page-count">4 pages published</span></p>
     </div>
   </nav>
 
   <div class="scrim" id="scrim" hidden></div>
 
-  <main class="page" id="page" tabindex="-1"><!-- rendered by app.js --></main>
+  <main class="page" id="page" tabindex="-1" data-route="/"><div class="page-body home"><header class="home-hero" id="home-search-block"><span class="eyebrow">Engineer Booklet</span><h1>A reference manual for working engineers</h1><p class="home-lede">One engineering concept per video, at the depth the job actually needs. Every page follows the same five steps and is built to still be right in five years.</p><div class="home-search" role="search"><svg class="icon search-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"></use></svg><input id="home-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search a process, a failure mode or an abbreviation" aria-label="Search the booklet" role="combobox" aria-expanded="false" aria-controls="home-search-results" aria-autocomplete="list"><ul id="home-search-results" class="search-results" role="listbox" aria-label="Search results" hidden></ul></div><div class="home-hints"><span>Try</span><button type="button" class="hint-chip" data-q="FMEA">FMEA</button><button type="button" class="hint-chip" data-q="tolerance">tolerance</button><button type="button" class="hint-chip" data-q="porosity">porosity</button><button type="button" class="hint-chip" data-q="metal 3D printing">metal 3D printing</button><button type="button" class="hint-chip" data-q="RPN">RPN</button><button type="button" class="hint-chip" data-q="tool deflection">tool deflection</button></div><p class="home-meta"><span>4 pages published</span><span>New page every week</span><a href="/start-here/what-this-channel-is/">New here? Start with page 00</a></p></header><section class="home-block" id="home-latest" aria-labelledby="home-latest-h"><h2 class="home-h" id="home-latest-h">Newest page</h2><div class="feature"><a class="feature-media" href="/manufacturing/cnc-machining-tolerances/" aria-label="Open page 03: CNC Machining Tolerances: What's Actually Achievable"><img class="thumb" src="/assets/img/thumb-03.jpg" alt="" width="1280" height="720" loading="eager"><span class="feature-play"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"></use></svg></span></a><div class="feature-body"><div class="feature-kicker"><span class="pl-tag is-new">New</span><span>Manufacturing Processes · Page 03</span></div><h3 class="feature-title"><a href="/manufacturing/cnc-machining-tolerances/">CNC Machining Tolerances: What's Actually Achievable</a></h3><p class="feature-sum">A tight number on a drawing is a budget you spend. What really sets the tolerance a machine can hold — the machine, the tool, the heat, the clamping and the number of setups — why the cost curve goes vertical as you tighten it, and the measuring floor underneath all of it.</p><div class="page-meta"><span class="meta-item"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"></use></svg>9:25</span><span class="meta-item">Sep 25, 2026</span></div><div class="feature-actions"><a class="btn is-primary" href="/manufacturing/cnc-machining-tolerances/">Open the page<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a><a class="btn is-ghost" href="https://www.youtube.com/watch?v=IhlMk9RZ4WA" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>Watch on YouTube</a></div></div></div></section><section class="home-block" id="home-pillars" aria-labelledby="home-pillars-h"><h2 class="home-h" id="home-pillars-h">Browse by section</h2><div class="pillar-grid"><article class="pillar-card"><a class="pillar-head" href="/manufacturing/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bracket"></use></svg><span class="pillar-title">Manufacturing Processes</span><span class="tab-letter">A</span></a><p class="pillar-blurb">How parts are actually made. Metal 3D printing, CNC, injection molding, casting — the tolerances you can really hold and the defects that show up in production.</p><a class="pillar-latest" href="/manufacturing/cnc-machining-tolerances/"><span class="pv-media"><img class="thumb" src="/assets/img/thumb-03.jpg" alt="" width="1280" height="720" loading="lazy"></span><span class="pv-kicker">Latest · Page 03<span class="pl-tag is-new">New</span></span><span class="pv-title">CNC Machining Tolerances: What's Actually Achievable</span><span class="pv-meta"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"></use></svg>9:25</span></a><div class="pillar-foot"><a href="/manufacturing/">2 pages<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a><a class="is-playlist" href="https://www.youtube.com/playlist?list=PLdnf4Q7hDyCg" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-playlist"></use></svg>Playlist on YouTube<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></article><article class="pillar-card"><a class="pillar-head" href="/reliability/"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crack"></use></svg><span class="pillar-title">Reliability &amp; Failure</span><span class="tab-letter">B</span></a><p class="pillar-blurb">Why things break and how to catch it on paper first. FMEA, root cause, fatigue, Weibull, SPC, inspection.</p><a class="pillar-latest" href="/reliability/fmea/"><span class="pv-media"><img class="thumb" src="/assets/img/thumb-02.jpg" alt="" width="1280" height="720" loading="lazy"></span><span class="pv-kicker">Latest · Page 02</span><span class="pv-title">FMEA Explained: The Method Most Engineers Fill In Wrong</span><span class="pv-meta"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"></use></svg>9:46</span></a><div class="pillar-foot"><a href="/reliability/">1 page<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a><a class="is-playlist" href="https://www.youtube.com/playlist?list=PLLi9hLE9NCyM" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-playlist"></use></svg>Playlist on YouTube<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></article><article class="pillar-card"><div class="pillar-head"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"></use></svg><span class="pillar-title">Product Development</span><span class="tab-letter">C</span></div><p class="pillar-blurb">How a design gets from sketch to production line in one piece. DFM, GD&amp;T, tolerance stack-up, design reviews, industrialization.</p><div class="pillar-latest is-empty"><span class="pv-media"><span class="thumb thumb-blank"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sheet"></use></svg><b>Coming soon</b></span></span><span class="pv-kicker">First page</span><span class="pv-title">Design for Manufacturing (DFM): The Rule Every New Engineer Breaks</span></div><div class="pillar-foot"><span></span><a class="is-playlist" href="https://www.youtube.com/playlist?list=PLKelF6x3orUw" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-playlist"></use></svg>Playlist on YouTube<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></article><article class="pillar-card"><div class="pillar-head"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sensor"></use></svg><span class="pillar-title">Automation &amp; Controls</span><span class="tab-letter">D</span></div><p class="pillar-blurb">How a factory knows what is happening on its own floor. Sensors, PLCs, SCADA, machine vision, predictive maintenance.</p><div class="pillar-latest is-empty"><span class="pv-media"><span class="thumb thumb-blank"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sensor"></use></svg><b>Coming soon</b></span></span><span class="pv-kicker">First page</span><span class="pv-title">Industrial IoT Sensors 101: How Factories Actually Monitor Equipment</span></div><div class="pillar-foot"><span></span><a class="is-playlist" href="https://www.youtube.com/playlist?list=PLTJ7-xwK5yNs" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-playlist"></use></svg>Playlist on YouTube<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></article><article class="pillar-card"><div class="pillar-head"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-caliper"></use></svg><span class="pillar-title">Core Fundamentals</span><span class="tab-letter">E</span></div><p class="pillar-blurb">The things that don't change. Stress and strain, material selection, process capability, bearings, bolted joints.</p><div class="pillar-latest is-empty"><span class="pv-media"><span class="thumb thumb-blank"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-caliper"></use></svg><b>Coming soon</b></span></span><span class="pv-kicker">First page</span><span class="pv-title">Stress vs Strain: The Difference Your Textbook Skipped</span></div><div class="pillar-foot"><span></span><a class="is-playlist" href="https://www.youtube.com/playlist?list=PLVb3bcu1T1Is" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-playlist"></use></svg>Playlist on YouTube<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></article><article class="pillar-card"><div class="pillar-head"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-monitor"></use></svg><span class="pillar-title">Tools &amp; Software</span><span class="tab-letter">F</span></div><p class="pillar-blurb">What is happening under the hood when you hit simulate. CAD, FEA, PLM, CAM, and where the model stops matching the part.</p><div class="pillar-latest is-empty"><span class="pv-media"><span class="thumb thumb-blank"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-monitor"></use></svg><b>Coming soon</b></span></span><span class="pv-kicker">First page</span><span class="pv-title">CAD Parametric Modeling: What's Actually Happening Under the Hood</span></div><div class="pillar-foot"><span></span><a class="is-playlist" href="https://www.youtube.com/playlist?list=PLf3nkNtp7zN4" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-playlist"></use></svg>Playlist on YouTube<svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-external"></use></svg></a></div></article></div></section></div></main>
 
-  <aside class="rail" id="rail" aria-label="On this page"><!-- rendered by app.js --></aside>
+  <aside class="rail" id="rail" aria-label="On this page"><h2>On this page</h2><ol style="list-style:none"><li style="padding:2px 0"><a class="rail-link" href="#home-search-block">Search</a></li><li style="padding:2px 0"><a class="rail-link" href="#home-latest">Newest page</a></li><li style="padding:2px 0"><a class="rail-link" href="#home-pillars">Browse by section</a></li></ol><a class="sub-cta in-rail" href="https://www.youtube.com/@engineerbooklet?sub_confirmation=1" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"></use></svg>Subscribe on YouTube</a></aside>
 </div>
 
 <footer class="site-foot">
-  <span>© <span id="foot-year"></span> Engineer Booklet</span>
-  <nav aria-label="Legal">
-    <a href="privacy.html">Privacy &amp; cookies</a>
+  <span>© <span id="foot-year">2026</span> Engineer Booklet</span>
+  <nav aria-label="Site">
+    <a href="/start-here/what-this-channel-is/">About</a>
+    <a href="mailto:info@engineer-booklet.com">Contact</a>
+    <a href="/privacy.html">Privacy &amp; cookies</a>
+    <a href="/privacy.html#cookies" id="cookie-settings">Cookie settings</a>
   </nav>
 </footer>
 
-<!-- ── Cookie consent — Google Consent Mode v2 default (denied) is set inline,
-     above the AdSense loader, before either fires. The banner below just
-     collects the visitor's choice and calls gtag('consent','update', …).
-     Swap for Google's own Funding Choices CMP once the AdSense account
-     exists — it's the maintained, jurisdiction-aware version of this. ──── -->
-<div class="consent-bar" id="consent-bar" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
-  <p>This site uses cookies for basic analytics and, once ads are live, ad personalization. See the <a href="privacy.html">privacy &amp; cookies page</a>.</p>
-  <div class="consent-actions">
-    <button type="button" id="consent-reject" class="consent-btn is-ghost">Reject non-essential</button>
-    <button type="button" id="consent-accept" class="consent-btn is-accent">Accept</button>
-  </div>
-</div>
 
 <!-- ── Content ──────────────────────────────────────────────────────────
      Taxonomy first, then one file per video page.
      ADD A NEW VIDEO: drop the file in data/pages/ and add one line here. -->
-<script src="data/booklet.js"></script>
-<script src="data/pages/00-what-this-channel-is.js"></script>
-<script src="data/pages/01-powder-bed-fusion.js"></script>
-<script src="data/pages/02-fmea.js"></script>
-<script src="data/pages/03-cnc-machining-tolerances.js"></script>
+<script src="/data/booklet.js"></script>
+<script src="/data/pages/00-what-this-channel-is.js"></script>
+<script src="/data/pages/01-powder-bed-fusion.js"></script>
+<script src="/data/pages/02-fmea.js"></script>
+<script src="/data/pages/03-cnc-machining-tolerances.js"></script>
 
-<script src="assets/js/app.js"></script>
+<script src="/assets/js/render.js"></script>
+<script src="/assets/js/app.js"></script>
 </body>
 </html>

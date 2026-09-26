@@ -24,6 +24,7 @@ BOOKLET.addPage({
   /* The video's own final end-card, copied in verbatim so the site can offer
      the exact same frame as a download instead of relying on a screenshot. */
   bookletPageImage: 'assets/img/booklet-page-00.png',
+  thumbnail: 'assets/img/thumb-00.jpg',
   keywords: [
     'engineer booklet', 'reference', 'format', 'five steps', 'six sections',
     'how to use this channel', 'evergreen',

@@ -13,6 +13,7 @@ BOOKLET.addPage({
   status: 'published',
   youtubeId: 'IhlMk9RZ4WA',
   bookletPageImage: 'assets/img/booklet-page-03.png',
+  thumbnail: 'assets/img/thumb-03.jpg',
   keywords: [
     'cnc machining tolerances', 'cnc tolerances', 'machining tolerances', 'achievable tolerance',
     'tool deflection', 'cantilever', 'spindle runout', 'axis positioning', 'repeatability',

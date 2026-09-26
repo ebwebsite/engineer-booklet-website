@@ -22,6 +22,11 @@ window.BOOKLET = {
     linkedin: '',
   },
 
+  /* The "Try" chips under the homepage search. A chip only shows when it finds
+     a published page, but this file is public source, so list only terms from
+     pages that are already live. Never tease a coming topic here. */
+  searchHints: ['FMEA', 'tolerance', 'porosity', 'metal 3D printing', 'RPN', 'tool deflection'],
+
   /* The five fixed steps of every page — mirrors video-engine/src/theme.ts.
      The page body is laid out in these steps, and the right-hand rail is a
      web version of the progress bar that runs across the bottom of every video. */
@@ -42,6 +47,8 @@ window.BOOKLET = {
      SECTIONS = the tabs. Order here is the order in the sidebar.
      `kind: 'feed'` marks the two pseudo-tabs (NEW, START HERE) that hold no
      pillar of their own. `letter` is the pillar id from the channel plan.
+     `playlist` is the pillar's YouTube playlist — linked from its card on the
+     homepage and from the section index. Leave it out and the link is hidden.
      `upcoming` teases exactly ONE coming topic per section (greyed under the
      tab) — we deliberately don't publish the full roadmap or how many are planned.
      --------------------------------------------------------------------- */
@@ -65,6 +72,7 @@ window.BOOKLET = {
     {
       id: 'manufacturing',
       letter: 'A',
+      playlist: 'https://www.youtube.com/playlist?list=PLdnf4Q7hDyCg',
       short: 'Manufacturing',
       title: 'Manufacturing Processes',
       icon: 'i-bracket',
@@ -81,6 +89,7 @@ window.BOOKLET = {
     {
       id: 'reliability',
       letter: 'B',
+      playlist: 'https://www.youtube.com/playlist?list=PLLi9hLE9NCyM',
       short: 'Reliability',
       title: 'Reliability & Failure',
       icon: 'i-crack',
@@ -91,6 +100,7 @@ window.BOOKLET = {
     {
       id: 'product-development',
       letter: 'C',
+      playlist: 'https://www.youtube.com/playlist?list=PLKelF6x3orUw',
       short: 'Product Dev',
       title: 'Product Development',
       icon: 'i-sheet',
@@ -101,6 +111,7 @@ window.BOOKLET = {
     {
       id: 'automation',
       letter: 'D',
+      playlist: 'https://www.youtube.com/playlist?list=PLTJ7-xwK5yNs',
       short: 'Automation',
       title: 'Automation & Controls',
       icon: 'i-sensor',
@@ -111,6 +122,7 @@ window.BOOKLET = {
     {
       id: 'fundamentals',
       letter: 'E',
+      playlist: 'https://www.youtube.com/playlist?list=PLVb3bcu1T1Is',
       short: 'Fundamentals',
       title: 'Core Fundamentals',
       icon: 'i-caliper',
@@ -121,6 +133,7 @@ window.BOOKLET = {
     {
       id: 'tools',
       letter: 'F',
+      playlist: 'https://www.youtube.com/playlist?list=PLf3nkNtp7zN4',
       short: 'Tools',
       title: 'Tools & Software',
       icon: 'i-monitor',
