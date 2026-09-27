@@ -49,8 +49,11 @@ window.BOOKLET = {
      pillar of their own. `letter` is the pillar id from the channel plan.
      `playlist` is the pillar's YouTube playlist — linked from its card on the
      homepage and from the section index. Leave it out and the link is hidden.
-     `upcoming` teases exactly ONE coming topic per section (greyed under the
-     tab) — we deliberately don't publish the full roadmap or how many are planned.
+     `upcoming` teases ONE coming topic, and only for a section with nothing
+     published yet (greyed under the tab, "Coming soon" on its homepage card).
+     Once a section has pages, its next video is not announced anywhere:
+     render.js ignores the field and export-site.js ships it empty. You can
+     keep titles here for your own tracking; they never reach the public copy.
      --------------------------------------------------------------------- */
   sections: [
     {
@@ -78,13 +81,8 @@ window.BOOKLET = {
       icon: 'i-bracket',
       blurb:
         'How parts are actually made. Metal 3D printing, CNC, injection molding, casting — the tolerances you can really hold and the defects that show up in production.',
-      /* One teaser only — we don't publish the roadmap or its size. This
-         must match the title of whichever page is actually next, not just
-         any topic in the bank. Page 03 (CNC tolerances) published 2026-09-25,
-         so this moved on to A3, the next manufacturing topic in the plan.
-         Video 03's own end card promises DFM, which is the PRODUCT DEV
-         section's next page — each section teases its own. */
-      upcoming: ['Investment Casting vs Sand Casting: When to Use Which'],
+      /* Private tracking only: this section has pages, so this is never shown. */
+      upcoming: [],
     },
     {
       id: 'reliability',
@@ -95,7 +93,7 @@ window.BOOKLET = {
       icon: 'i-crack',
       blurb:
         'Why things break and how to catch it on paper first. FMEA, root cause, fatigue, Weibull, SPC, inspection.',
-      upcoming: ["Root Cause Analysis: The 5 Whys Isn't Enough"],
+      upcoming: [],
     },
     {
       id: 'product-development',

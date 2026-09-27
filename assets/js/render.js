@@ -85,14 +85,14 @@
       return p ? pageUrl(p) : sectionUrl(s);
     }
 
-    /* The section's ONE teaser: the first `upcoming` title not yet published.
-       Every surface that shows a teaser goes through here, so none of them can
-       show a second title. */
+    /* The section's ONE teaser, and only while the section has nothing
+       published: it shows an empty section isn't abandoned. Once a section
+       has pages, what comes next stays unannounced (owner, 2026-09-27).
+       Every surface that shows a teaser goes through here, so none of them
+       can show a second title or a teaser for a populated section. */
     function nextUpcoming(s) {
-      var list = pagesBySection[s.id] || [];
-      return (s.upcoming || []).filter(function (title) {
-        return !list.some(function (p) { return p.title === title; });
-      })[0];
+      if ((pagesBySection[s.id] || []).length) return null;
+      return (s.upcoming || [])[0] || null;
     }
 
     function pageCountText() {
