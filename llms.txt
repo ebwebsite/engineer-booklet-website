@@ -8,6 +8,7 @@
 - [Powder Bed Fusion (Metal 3D Printing) Explained](https://engineer-booklet.com/manufacturing/powder-bed-fusion/): A laser melts metal powder layer by layer into a fully dense part. Here is the mechanism, the two ways the melting goes wrong, and why a part that looks perfect can crack weeks later.
 - [FMEA Explained: The Method Most Engineers Fill In Wrong](https://engineer-booklet.com/reliability/fmea/): FMEA finds how a design can fail before it does. Here is the one line the whole method repeats, why its famous risk number buries the failures that matter most, and the three habits that make most FMEAs catch nothing.
 - [CNC Machining Tolerances: What's Actually Achievable](https://engineer-booklet.com/manufacturing/cnc-machining-tolerances/): A tight number on a drawing is a budget you spend. What really sets the tolerance a machine can hold — the machine, the tool, the heat, the clamping and the number of setups — why the cost curve goes vertical as you tighten it, and the measuring floor underneath all of it.
+- [Design for Manufacturing (DFM): The Rule New Engineers Break](https://engineer-booklet.com/product-development/design-for-manufacturing/): A part can do its job perfectly and still be a nightmare to make. Where a part's cost really gets decided, the rules each process brings (inside corners, draft, even walls, a bend radius), four moves that make almost any part cheaper to build, and why DFM only works as a conversation held early.
 
 ## More
 

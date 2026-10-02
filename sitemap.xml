@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://engineer-booklet.com/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://engineer-booklet.com/</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://engineer-booklet.com/start-here/</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://engineer-booklet.com/manufacturing/</loc><lastmod>2026-09-25</lastmod></url>
   <url><loc>https://engineer-booklet.com/reliability/</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://engineer-booklet.com/product-development/</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://engineer-booklet.com/start-here/what-this-channel-is/</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://engineer-booklet.com/manufacturing/powder-bed-fusion/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://engineer-booklet.com/reliability/fmea/</loc><lastmod>2026-09-18</lastmod></url>
   <url><loc>https://engineer-booklet.com/manufacturing/cnc-machining-tolerances/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://engineer-booklet.com/product-development/design-for-manufacturing/</loc><lastmod>2026-10-02</lastmod></url>
 </urlset>

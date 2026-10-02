@@ -104,7 +104,7 @@ window.BOOKLET = {
       icon: 'i-sheet',
       blurb:
         'How a design gets from sketch to production line in one piece. DFM, GD&T, tolerance stack-up, design reviews, industrialization.',
-      upcoming: ['Design for Manufacturing (DFM): The Rule Every New Engineer Breaks'],
+      upcoming: [],
     },
     {
       id: 'automation',
