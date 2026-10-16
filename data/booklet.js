@@ -115,7 +115,7 @@ window.BOOKLET = {
       icon: 'i-sensor',
       blurb:
         'How a factory knows what is happening on its own floor. Sensors, PLCs, SCADA, machine vision, predictive maintenance.',
-      upcoming: ['Industrial IoT Sensors 101: How Factories Actually Monitor Equipment'],
+      upcoming: [],
     },
     {
       id: 'fundamentals',
