@@ -126,7 +126,7 @@ window.BOOKLET = {
       icon: 'i-caliper',
       blurb:
         "The things that don't change. Stress and strain, material selection, process capability, bearings, bolted joints.",
-      upcoming: ['Stress vs Strain: The Difference Your Textbook Skipped'],
+      upcoming: [],
     },
     {
       id: 'tools',
@@ -137,7 +137,7 @@ window.BOOKLET = {
       icon: 'i-monitor',
       blurb:
         "What is happening under the hood when you hit simulate. CAD, FEA, PLM, CAM, and where the model stops matching the part.",
-      upcoming: ["CAD Parametric Modeling: What's Actually Happening Under the Hood"],
+      upcoming: ['Parametric CAD Modeling: Why One Edit Breaks the Whole Model'],
     },
   ],
 
