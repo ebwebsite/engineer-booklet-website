@@ -3,7 +3,8 @@
    --------------------------------------------------------------------------
    This file defines the TAXONOMY (the tabs down the left side).
    Individual video pages live in data/pages/*.js and register themselves
-   with BOOKLET.addPage(). See README.md → "Adding a new page".
+   with BOOKLET.addPage(). See README.md → "Adding a new page" (and
+   "Before every push").
    ========================================================================== */
 
 window.BOOKLET = {
