@@ -138,7 +138,7 @@ window.BOOKLET = {
       icon: 'i-monitor',
       blurb:
         "What is happening under the hood when you hit simulate. CAD, FEA, PLM, CAM, and where the model stops matching the part.",
-      upcoming: ['Parametric CAD Modeling: Why One Edit Breaks the Whole Model'],
+      upcoming: [],
     },
   ],
 
